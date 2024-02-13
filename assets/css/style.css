@@ -65,10 +65,16 @@ h1, h2, h3, p, span {
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(4, 1fr);
     gap: 1.5em 1.5em;
+    font-family: var(--FONT);
+    font-size: var(--FONT-CARD);
 }
 
 .profile {
     grid-row: span 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .card {
@@ -77,11 +83,10 @@ h1, h2, h3, p, span {
 }
 
 .card:nth-child(1) {
-    background-color: var(--CARD-PROFILE);
+    background-color: var(--BGCOLOR-MAIN);
 }
 
 .card:nth-child(2) {
-   
     background: var(--CARD-WORK) url(../images/icon-work.svg) no-repeat right top;
 }
 
@@ -105,18 +110,79 @@ h1, h2, h3, p, span {
     background: var(--CARD-SELFCARE) url(../images/icon-self-care.svg) no-repeat right top;
 }
 
+.card__info {
+    background-color: var(--BGCOLOR-MAIN);
+    width: 100%;
+    height: 80%;
+    border-radius: var(--BORDER-RADIUS);
+    position: absolute;
+    bottom: 0;
+}
+
+/* || PROFILE CARD */
+.profile__id {
+    background-color: var(--CARD-PROFILE);
+    width: 100%;
+    height: 70%;
+    border-radius: var(--BORDER-RADIUS);
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 30px 80px;
+    color: var(--PALE-BLUE);
+}
+
+.profile_photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.profile__present {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile__name {
+    font-size: 2em;
+    text-align: start;
+}
+
+.profile__info {
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 30px;
+    font-size: var(--FONT-CARD);
+    color: var(--DESATURATED-BLUE);
+}
+
+.profile__info .active {
+    color: var(--PALE-BLUE);
+}
+
 /* || FOOTER */
 .attribution {
-    font-size: 9px;
+    font-size: 12px;
     position: absolute;
-    color: #000;
+    color: var(--PALE-BLUE);
     bottom: 5px;
     left: 8%;
     right: 8%;
 }
 
 .attribution a {
-    color: rgb(255, 0, 0);
+    color: var(--CARD-WORK);
 }
 
 @media screen and (max-width: 576px) {
