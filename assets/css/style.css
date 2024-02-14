@@ -69,6 +69,7 @@ h1, h2, h3, p, span {
     font-size: var(--FONT-CARD);
 }
 
+/* || PROFILE CARD */
 .profile {
     grid-row: span 2;
     position: relative;
@@ -77,6 +78,60 @@ h1, h2, h3, p, span {
     justify-content: flex-end;
 }
 
+.profile__id {
+    background-color: var(--CARD-PROFILE);
+    width: 100%;
+    height: 70%;
+    border-radius: var(--BORDER-RADIUS);
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 30px 80px;
+    color: var(--PALE-BLUE);
+}
+
+.profile_photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.profile__present {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__present p {
+    text-align: start;
+}
+
+.profile__name {
+    font-size: 2em;
+}
+
+.profile__info {
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 30px;
+    font-size: var(--FONT-CARD);
+    color: var(--DESATURATED-BLUE);
+}
+
+.profile__info .active {
+    color: var(--PALE-BLUE);
+}
+
+/* || INFO CARD */
 .card {
     border-radius: var(--BORDER-RADIUS);
     position: relative;
@@ -112,63 +167,39 @@ h1, h2, h3, p, span {
 
 .card__info {
     background-color: var(--BGCOLOR-MAIN);
+    color: var(--PALE-BLUE);
     width: 100%;
     height: 80%;
     border-radius: var(--BORDER-RADIUS);
+    padding: 30px 30px;
     position: absolute;
     bottom: 0;
-}
-
-/* || PROFILE CARD */
-.profile__id {
-    background-color: var(--CARD-PROFILE);
-    width: 100%;
-    height: 70%;
-    border-radius: var(--BORDER-RADIUS);
-    position: absolute;
-    top: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 30px 30px 80px;
-    color: var(--PALE-BLUE);
 }
 
-.profile_photo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-}
-
-.profile__present {
+.info__details {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.profile__name {
-    font-size: 2em;
+.info__details img {
+    width: 21px;
+    height: 5px;
+}
+
+.card__info p {
     text-align: start;
 }
 
-.profile__info {
-    background-color: transparent;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 30px 30px;
-    font-size: var(--FONT-CARD);
-    color: var(--DESATURATED-BLUE);
+.info__current {
+    font-size: 2.5em;
 }
 
-.profile__info .active {
-    color: var(--PALE-BLUE);
+.info__previous {
+    color: var(--DESATURATED-BLUE);
 }
 
 /* || FOOTER */
