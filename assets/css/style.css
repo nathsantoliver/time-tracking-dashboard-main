@@ -135,7 +135,7 @@ h1, h2, h3, p, span {
 }
 
 .profile__info p:hover {
-    font-size: 1.1em;
+    color: var(--PALE-BLUE);
 }
 
 .profile__info .active {
@@ -188,6 +188,13 @@ h1, h2, h3, p, span {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.card__info:hover {
+    cursor: pointer;
+    /* background-color: rgba(28, 31, 74, 0.919); */
+    /* background-color: hsl(246, 80%, 60%); */
+    opacity: 0.95;
 }
 
 .info__details {
