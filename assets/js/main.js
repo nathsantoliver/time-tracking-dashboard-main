@@ -1,4 +1,10 @@
 let timeframe = document.querySelectorAll('.timeframe');
+// let cardInfo = document.querySelectorAll('.card__info');
+let title = document.querySelectorAll('.title');
+let current = document.querySelectorAll('.current');
+let previous = document.querySelectorAll('.previous');
+
+cardValue();
 
 /* || SELECT TIMEFRAME */
 timeframe.forEach((option) => {
@@ -18,11 +24,15 @@ function disableTimeframe() {
     timeframeSelected.classList.remove('active');
 }
 
-// /* || SYNCHRONIZE THE CARD VALUES */
-// async function cardValue() {
-//     const response = await fetch('data.json');
-//     const data = await response.json();
+/* || SYNCHRONIZE THE CARD VALUES */
+async function cardValue() {
+    const response = await fetch('data.json');
+    const data = await response.json();
 
+    for(var i = 0; i < data.length; i++) {
+        title[i].innerHTML = data[i].title;
+        current[i].innerHTML = data[i].timeframes.weekly.current;
+        previous[i].innerHTML = data[i].timeframes.weekly.previous;
+    }
 
-// }
-
+}
