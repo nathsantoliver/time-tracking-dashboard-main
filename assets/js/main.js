@@ -1,10 +1,8 @@
 let timeframe = document.querySelectorAll('.timeframe');
-// let cardInfo = document.querySelectorAll('.card__info');
 let title = document.querySelectorAll('.title');
 let current = document.querySelectorAll('.current');
 let previous = document.querySelectorAll('.previous');
 
-cardValue();
 
 /* || SELECT TIMEFRAME */
 timeframe.forEach((option) => {
@@ -17,6 +15,20 @@ timeframe.forEach((option) => {
 /* || FUNCTION SELECT TIMEFRAME */
 function selectTimeframe(option) {
     option.classList.toggle('active');
+
+    const infoValue = option.value;
+
+    switch (infoValue) {
+        case 'daily':
+            dailyValue();
+            break;
+        case 'weekly':
+            weeklyValue();
+            break;
+        case 'monthly':
+            monthlyValue();
+            break;
+    }
 }
 
 function disableTimeframe() {
@@ -24,15 +36,44 @@ function disableTimeframe() {
     timeframeSelected.classList.remove('active');
 }
 
+weeklyValue();
+
 /* || SYNCHRONIZE THE CARD VALUES */
-async function cardValue() {
+async function dailyValue() {
     const response = await fetch('data.json');
     const data = await response.json();
 
-    for(var i = 0; i < data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
+        title[i].innerHTML = data[i].title;
+        current[i].innerHTML = data[i].timeframes.daily.current;
+        previous[i].innerHTML = data[i].timeframes.daily.previous;
+
+    }
+
+}
+
+async function weeklyValue() {
+    const response = await fetch('data.json');
+    const data = await response.json();
+
+    for (var i = 0; i < data.length; i++) {
         title[i].innerHTML = data[i].title;
         current[i].innerHTML = data[i].timeframes.weekly.current;
         previous[i].innerHTML = data[i].timeframes.weekly.previous;
+
+    }
+
+}
+
+async function monthlyValue() {
+    const response = await fetch('data.json');
+    const data = await response.json();
+
+    for (var i = 0; i < data.length; i++) {
+        title[i].innerHTML = data[i].title;
+        current[i].innerHTML = data[i].timeframes.monthly.current;
+        previous[i].innerHTML = data[i].timeframes.monthly.previous;
+
     }
 
 }

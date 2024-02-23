@@ -114,7 +114,6 @@ h1, h2, h3, p, span {
 }
 
 .profile__info {
-    background-color: transparent;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -124,17 +123,19 @@ h1, h2, h3, p, span {
     justify-content: space-between;
     align-items: flex-start;
     padding: 30px 30px;
+}
+
+.profile__info button {
+    background-color: transparent;
+    border: none;
     font-size: var(--FONT-CARD);
     color: var(--DESATURATED-BLUE);
     font-weight: 500;
-}
-
-.profile__info p {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
-.profile__info p:hover {
+.profile__info button:hover {
     color: var(--PALE-BLUE);
 }
 
