@@ -198,29 +198,31 @@ h1, h2, h3, p, span {
     opacity: 0.95;
 }
 
-.info__details {
+.info__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: 500;
 }
 
-.info__details img {
+.info__header img {
     width: 21px;
     height: 5px;
     cursor: pointer;
 }
 
-.card__info p {
+.info__details p {
     text-align: start;
 }
 
 .info__current {
-    font-size: 2.5em;
+    font-size: 3em;
+    padding-bottom: 10px;
 }
 
 .info__previous {
     color: var(--DESATURATED-BLUE);
+    font-size: 0.8em;
     font-weight: 400;
 }
 
@@ -238,19 +240,79 @@ h1, h2, h3, p, span {
     color: var(--CARD-WORK);
 }
 
-@media screen and (max-width: 576px) {
+@media only screen and (max-width: 450px) {
+
+    body {
+        height: max-content;
+        flex-direction: column;
+    }
+
+    /* || MAIN */
     .main {
-        width: 90%;
-        height: 100vh;
-        /* margin-top: 90px; */
+        width: 85%;
+        height: max-content;
+        overflow: scroll;
+        padding: 75px 0;
         display: grid;
-        grid-template: repeat(7, 1fr) / repeat(1, 1fr);
-        /* grid-template-columns: repeat(4, 1fr); */
-        /* grid-template-rows: repeat(2, 1fr); */
+        grid-template-columns: 1fr;
+        grid-template-rows: 32vh repeat(6, 24vh);
+        /* grid-template: repeat(7, 32vh) / repeat(1, 1fr); */
         gap: 1.5em 1.5em;
     }
 
+    /* || PROFILE CARD */
     .profile {
         grid-row: 1;
     }
+
+    .profile__id {
+        height: 65%;
+        flex-direction: row;
+        align-items: center;
+        padding: 30px 30px;
+    }
+
+    .profile_photo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .profile__present {
+        gap: 5px;
+    }
+
+    .profile__present p:first-child {
+        font-size: 0.8em;
+    }
+    
+    .profile__name {
+        font-size: 1.3em;
+        font-weight: 400;
+        
+    }
+
+    .profile__info {
+        height: 35%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* || INFO CARD */
+    .card__info {
+        height: 75%;
+        gap: 5px; 
+    }
+
+    .info__details {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .info__current {
+        font-size: 1.8em;
+        padding: 0;
+    }
+
 }
+/* @media screen and (max-width: 576px) {} */
