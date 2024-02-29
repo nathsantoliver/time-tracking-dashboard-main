@@ -61,8 +61,8 @@ h1, h2, h3, p, span {
 
 /* || MAIN */
 .main {
-    width: 70%;
-    height: 60%;
+    width: 77%;
+    height: 52.11%;
     display: grid;
     grid-template: repeat(2, 1fr) / repeat(4, 1fr);
     gap: 1.5em 1.5em;
