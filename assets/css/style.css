@@ -110,7 +110,9 @@ h1, h2, h3, p, span {
 }
 
 .profile__name {
+    text-align: start;
     font-size: 2em;
+    font-weight: 400;
 }
 
 .profile__info {
