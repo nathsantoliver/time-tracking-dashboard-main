@@ -3,6 +3,11 @@ let title = document.querySelectorAll('.title');
 let current = document.querySelectorAll('.current');
 let previous = document.querySelectorAll('.previous');
 
+main();
+
+async function main() {
+    await weeklyValue();
+}
 
 /* || SELECT TIMEFRAME */
 timeframe.forEach((option) => {
@@ -35,8 +40,6 @@ function disableTimeframe() {
     const timeframeSelected = document.querySelector('.active');
     timeframeSelected.classList.remove('active');
 }
-
-weeklyValue();
 
 /* || SYNCHRONIZE THE CARD VALUES */
 async function dailyValue() {
